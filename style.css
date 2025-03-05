@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:400,500,700');
+
+/* Color Variables */
+:root {
+  --white: #fff;
+  --black: #2e2e2e;
+  --gray: #787878;
+  --highlight: #ea8478;
+  --footer: #f7f7f7;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--gray);
+  background: var(--white);
+  text-rendering: optimizeLegibility;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  display: inline-block;
+  margin: 0 1.5rem 0 0;
+}
+
+a {
+  color: var(--gray);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover,
+a.active {
+  color: var(--black);
+}
+
+/* Navigation */
+nav {
+  padding: 2rem 1rem;
+}
+
+nav .grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+nav li {
+  font-size: 1.1rem;
+}
+
+#highlight {
+  color: var(--highlight);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Pinterest-Style Gallery */
+.gallery {
+  padding: 2rem;
+}
+
+.gallery .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  grid-auto-rows: auto; /* Auto-height based on content */
+  grid-gap: 1rem; /* Space between images */
+}
+
+.img-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto; /* Keep aspect ratio */
+  border-radius: 8px; /* Optional rounded corners */
+  transition: transform 0.3s ease-in-out;
+}
+
+.img-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  padding: 1rem 0;
+  background: var(--footer);
+  text-align: center;
+}
+
+.copyright {
+  margin: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  /* Center navigation in mobile */
+  nav .grid {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .gallery .grid {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+
+  .img-container img {
+    border-radius: 5px;
+  }
+}
